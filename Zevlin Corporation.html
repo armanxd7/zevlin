@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zevlin Corporation – AI Agents, Automation & Software</title>
+<meta name="description" content="Zevlin Corporation builds AI agents, AI receptionists, automation, websites and mobile apps for modern businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#030712;--surface:#111827;--card:rgba(17,24,39,.6);--line:rgba(255,255,255,.1);--p:#4F46E5;--s:#7C3AED;--a:#06B6D4;--gold:#E8B84B;--t:#fff;--t2:#94A3B8;--ok:#10B981;--err:#EF4444;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F8FAFC;--surface:#fff;--card:rgba(255,255,255,.75);--line:rgba(15,23,42,.12);--t:#0F172A;--t2:#475569;--gold:#9A6B00;color-scheme:light}}
+:root[data-theme="dark"]{--bg:#030712;--t:#fff}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font:400 16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;margin:0;line-height:1.1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:96px 0;position:relative}
+h2{font-size:clamp(32px,5vw,48px);font-weight:700;letter-spacing:-.02em;max-width:18ch}
+.lead{color:var(--t2);max-width:56ch;margin:16px 0 48px;font-size:18px}
+.grad{background:linear-gradient(90deg,var(--p),var(--s),var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* nav */
+nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px;font:700 18px Sora,sans-serif;letter-spacing:.2em}
+.brand small{display:block;font:500 9px Inter;letter-spacing:.35em;color:var(--gold)}
+.menu{display:flex;gap:28px;align-items:center}
+.menu a:not(.btn){color:var(--t2);font-size:15px;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:.3s}
+.menu a:not(.btn):hover{color:var(--t);background-size:100% 1px}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:500;border:1px solid var(--line);cursor:pointer;font-family:inherit;font-size:15px;color:var(--t);background:transparent;transition:.3s}
+.btn.pri{background:linear-gradient(135deg,var(--p),var(--s));border:0;color:#fff}
+.btn:hover{box-shadow:0 0 28px rgba(124,58,237,.5);transform:translateY(-1px)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--t);border-radius:10px;padding:8px 12px;font-size:18px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+/* hero */
+.hero{padding:96px 0 120px;overflow:hidden}
+.aurora{position:absolute;inset:-10% -10% auto;height:640px;pointer-events:none;filter:blur(90px);opacity:.55;background:radial-gradient(40% 50% at 20% 30%,var(--p),transparent),radial-gradient(35% 45% at 70% 20%,var(--s),transparent),radial-gradient(30% 40% at 85% 60%,var(--a),transparent);animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-3%,4%) scale(1.06)}}
+.hgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative}
+.hero h1{font-size:clamp(40px,6vw,72px);font-weight:800;letter-spacing:-.03em}
+.hero p{color:var(--t2);font-size:18px;max-width:50ch;margin:24px 0 32px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.badges{display:flex;gap:20px;flex-wrap:wrap;margin-top:40px;color:var(--t2);font-size:14px}
+.badges span::before{content:"✓ ";color:var(--ok)}
+.viz{position:relative;aspect-ratio:1;max-width:460px;margin:auto;width:100%}
+.viz svg{width:100%;height:100%}
+.node{animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+.glass{background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:24px}
+.float{position:absolute;padding:14px 18px;border-radius:16px;font-size:13px;animation:fl 6s ease-in-out infinite}
+.float b{display:block;font:700 15px Sora}
+.float.f1{top:8%;right:-2%}.float.f2{bottom:12%;left:-4%;animation-delay:-3s}
+@keyframes fl{50%{transform:translateY(-12px)}}
+/* cards */
+.grid{display:grid;gap:24px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{padding:32px;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--s);box-shadow:0 20px 50px -20px rgba(124,58,237,.6)}
+.card h3{font-size:20px;margin:16px 0 8px}
+.card p{margin:0;color:var(--t2);font-size:15px}
+.ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--p),var(--s));font-size:20px}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative;counter-reset:s}
+.steps::before{content:"";position:absolute;top:22px;left:5%;right:5%;height:2px;background:linear-gradient(90deg,var(--p),var(--s),var(--a))}
+.step{position:relative;text-align:center}
+.step i{counter-increment:s;display:grid;place-items:center;width:46px;height:46px;margin:0 auto 16px;border-radius:50%;background:var(--bg);border:2px solid var(--s);font:700 16px Sora;font-style:normal;position:relative}
+.step i::before{content:counter(s)}
+.step b{font:600 17px Sora;display:block}.step span{color:var(--t2);font-size:14px}
+/* portfolio */
+.proj{overflow:hidden;padding:0}
+.proj .img{height:170px;background:linear-gradient(135deg,var(--p),var(--s) 55%,var(--a));opacity:.85;transition:.5s}
+.proj:hover .img{transform:scale(1.06)}
+.proj div.b{padding:24px}
+.tag{display:inline-block;font-size:12px;color:var(--a);border:1px solid var(--line);padding:2px 10px;border-radius:99px;margin:4px 6px 0 0}
+/* pricing */
+.price{padding:32px;display:flex;flex-direction:column;gap:6px}
+.price .n{font:800 34px Sora}.price .n small{font:400 14px Inter;color:var(--t2)}
+.price ul{list-style:none;padding:0;margin:12px 0 0;color:var(--t2);font-size:14px}
+.price li::before{content:"✓ ";color:var(--ok)}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:32px}
+.toggle button{background:none;border:0;color:var(--t2);padding:8px 18px;border-radius:9px;cursor:pointer;font:500 14px Inter}
+.toggle button[aria-pressed=true]{background:var(--surface);color:var(--t)}
+.price.hot{border-color:var(--s)}
+/* founder */
+.fgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+.portrait{aspect-ratio:1;max-width:340px;border-radius:32px;display:grid;place-items:center;font:800 96px Sora;background:linear-gradient(135deg,var(--p),var(--s),var(--a))}
+.fgrid p{color:var(--t2);max-width:60ch}
+/* contact */
+.cgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+form{padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .full{grid-column:1/-1}
+label{font-size:14px;color:var(--t2);display:grid;gap:6px}
+input,select,textarea{background:var(--surface);color:var(--t);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;transition:.3s;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--a);box-shadow:0 0 0 3px rgba(6,182,212,.25);outline:0}
+#msg{grid-column:1/-1;font-size:14px;min-height:20px}
+footer{border-top:1px solid var(--line);background:var(--surface);padding:64px 0 32px}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.fcols h4{margin:0 0 12px;font:600 15px Sora}.fcols a,.fcols p{display:block;color:var(--t2);font-size:14px;margin:6px 0}
+.fcols a:hover{color:var(--t)}
+.bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--line);margin-top:40px;padding-top:24px;color:var(--t2);font-size:13px}
+.wa{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:25;padding:14px 20px;border-radius:99px;background:#25D366;color:#04210f;font-weight:600;box-shadow:0 8px 30px rgba(37,211,102,.35)}
+@media (max-width:1024px){.g3{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr;gap:28px}.steps::before{display:none}}
+@media (max-width:768px){
+.menu{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;padding:24px;gap:18px;background:var(--bg);border-bottom:1px solid var(--line)}
+.menu.open{display:flex}.burger{display:block}
+.hgrid,.fgrid,.cgrid,.g3,.fcols{grid-template-columns:1fr}
+form{grid-template-columns:1fr}section{padding:64px 0}.hero{padding:56px 0 72px}
+.hero{text-align:center}.hero p{margin-inline:auto}.ctas,.badges{justify-content:center}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a href="#top" class="brand" aria-label="Zevlin Corporation home">
+<svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3CF6B"/><stop offset="1" stop-color="#B07A1C"/></linearGradient></defs><path fill="url(#g)" d="M2 2h30L10 24h20V38H2z" opacity="0"/><path fill="url(#g)" d="M3 2h28L22 11H11l-2 3v-1L3 17zM37 10v28h-9V19zM6 38l24-26v8H18v18z"/></svg>
+<span>ZEVLIN<small>CORPORATION</small></span></a>
+<button class="burger" aria-label="Open menu" aria-expanded="false" onclick="var m=document.getElementById('m');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)">☰</button>
+<div class="menu" id="m">
+<a href="#services">Services</a><a href="#process">Process</a><a href="#portfolio">Portfolio</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a>
+<a class="btn pri" href="#contact">Book consultation</a></div>
+</div></nav>
+
+<header class="hero" id="top">
+<div class="aurora"></div>
+<div class="wrap hgrid">
+<div>
+<h1>Transform your business with <span class="grad">artificial intelligence</span></h1>
+<p>AI agents, automation, AI receptionists, websites and mobile apps, built for modern businesses in Nepal and around the world.</p>
+<div class="ctas"><a class="btn pri" href="#contact">Book consultation</a><a class="btn" href="#contact">Get proposal</a><a class="btn" href="#services">See what we build</a></div>
+<div class="badges"><span>Enterprise-grade security</span><span>Free 30-minute discovery call</span><span>NPR and USD pricing</span></div>
+</div>
+<div class="viz" aria-hidden="true">
+<svg viewBox="0 0 400 400"><defs><linearGradient id="l" x1="0" x2="1"><stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+<g stroke="url(#l)" stroke-width="1.2" opacity=".6" fill="none"><path d="M60 90L200 60 340 110M60 90L110 220 200 180 290 240 340 110M110 220L90 330 200 310 290 240M200 60L200 180M200 180L200 310M290 240L330 340M90 330L200 310"/></g>
+<g fill="#7C3AED"><circle class="node" cx="60" cy="90" r="7"/><circle class="node" cx="200" cy="60" r="9" style="animation-delay:-1s"/><circle class="node" cx="340" cy="110" r="7" style="animation-delay:-2s"/><circle class="node" cx="110" cy="220" r="8"/><circle class="node" cx="290" cy="240" r="8" style="animation-delay:-1.5s"/><circle class="node" cx="90" cy="330" r="6"/><circle class="node" cx="330" cy="340" r="6" style="animation-delay:-2s"/></g>
+<circle class="node" cx="200" cy="180" r="16" fill="#06B6D4"/><circle cx="200" cy="310" r="8" fill="#4F46E5"/></svg>
+<div class="float f1 glass"><b>24/7</b>AI receptionist online</div>
+<div class="float f2 glass"><b>New lead</b>CRM entry created</div>
+</div></div></header>
+
+<section id="services"><div class="wrap">
+<h2>Everything you need to automate and grow</h2>
+<p class="lead">From a single chatbot to a full custom platform, we design, build and run it.</p>
+<div class="grid g3">
+<div class="card glass"><div class="ico">🤖</div><h3>AI agents</h3><p>Multi-agent systems for sales, support, research and operations.</p></div>
+<div class="card glass"><div class="ico">⚙️</div><h3>AI automation</h3><p>Connect Gmail, Sheets, HubSpot, Slack and more so repetitive work runs itself.</p></div>
+<div class="card glass"><div class="ico">🎧</div><h3>AI receptionists</h3><p>Answer calls, book appointments and qualify leads around the clock.</p></div>
+<div class="card glass"><div class="ico">📞</div><h3>AI call agents</h3><p>Outbound sales calls, follow-ups and feedback calls, logged to your CRM.</p></div>
+<div class="card glass"><div class="ico">💬</div><h3>AI chatbots</h3><p>Chat assistants trained on your services, FAQs and documents.</p></div>
+<div class="card glass"><div class="ico">🌐</div><h3>Website development</h3><p>Fast, SEO-ready landing pages, business sites and e-commerce stores.</p></div>
+<div class="card glass"><div class="ico">📱</div><h3>Mobile development</h3><p>Apps for iOS and Android, from first release to enterprise scale.</p></div>
+<div class="card glass"><div class="ico">🧩</div><h3>Custom software</h3><p>CRM, ERP and SaaS products built around how your business works.</p></div>
+<div class="card glass"><div class="ico">🟢</div><h3>WhatsApp automation</h3><p>Reply, notify and book through the channel your customers already use.</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>Why businesses choose Zevlin</h2>
+<p class="lead">Built like a product company, delivered like a partner.</p>
+<div class="grid g3">
+<div class="card glass"><h3>Enterprise security</h3><p>HTTPS, role-based access, rate limiting and bot protection from day one.</p></div>
+<div class="card glass"><h3>Scalable infrastructure</h3><p>Cloud-native and API-first, so what we build today carries your growth.</p></div>
+<div class="card glass"><h3>Modern technology</h3><p>Next.js, NestJS, PostgreSQL, OpenAI, Claude and LangGraph.</p></div>
+<div class="card glass"><h3>24/7 support</h3><p>Monitoring and maintenance plans keep your systems running.</p></div>
+<div class="card glass"><h3>Global standards</h3><p>USD contracts for international clients, NPR pricing for Nepal.</p></div>
+<div class="card glass"><h3>Custom solutions</h3><p>Priced on the value you get, not the hours we spend.</p></div>
+</div></div></section>
+
+<section id="process"><div class="wrap">
+<h2>From first call to ongoing results</h2>
+<p class="lead">A clear five-step path, with a free discovery call to start.</p>
+<div class="steps">
+<div class="step"><i></i><b>Discovery</b><span>We learn your goals and bottlenecks.</span></div>
+<div class="step"><i></i><b>Strategy</b><span>We scope the solution and the proposal.</span></div>
+<div class="step"><i></i><b>Development</b><span>We build, test and review with you.</span></div>
+<div class="step"><i></i><b>Deployment</b><span>We launch and train your team.</span></div>
+<div class="step"><i></i><b>Optimization</b><span>We monitor, measure and improve.</span></div>
+</div></div></section>
+
+<section id="portfolio"><div class="wrap">
+<h2>Selected work</h2>
+<p class="lead">Placeholder project cards. Replace them with your real case studies and results as you complete projects.</p>
+<div class="grid g3">
+<div class="card glass proj"><div class="img"></div><div class="b"><h3>AI receptionist for a clinic</h3><p>Call answering and appointment booking.</p><span class="tag">Twilio</span><span class="tag">OpenAI Realtime</span></div></div>
+<div class="card glass proj"><div class="img" style="filter:hue-rotate(40deg)"></div><div class="b"><h3>Lead automation pipeline</h3><p>Website form to CRM to WhatsApp follow-up.</p><span class="tag">n8n</span><span class="tag">HubSpot</span></div></div>
+<div class="card glass proj"><div class="img" style="filter:hue-rotate(-40deg)"></div><div class="b"><h3>Corporate website</h3><p>SEO-ready, multilingual business site.</p><span class="tag">Next.js</span><span class="tag">Sanity</span></div></div>
+</div></div></section>
+
+<section id="pricing"><div class="wrap">
+<h2>Clear pricing, in your currency</h2>
+<p class="lead">Subscription plans for our AI products. Project work is quoted after a free discovery call.</p>
+<div class="toggle" role="group" aria-label="Currency"><button aria-pressed="true" data-c="npr">NPR</button><button aria-pressed="false" data-c="usd">USD</button></div>
+<div class="grid g3">
+<div class="price glass"><h3>AI receptionist<br>Starter</h3><div class="n"><span data-npr="NPR 12,000" data-usd="$99">NPR 12,000</span> <small>/month</small></div><ul><li>Answers calls 24/7</li><li>Appointment booking</li><li>FAQ handling</li></ul></div>
+<div class="price glass hot"><h3>AI receptionist<br>Business</h3><div class="n"><span data-npr="NPR 35,000" data-usd="$299">NPR 35,000</span> <small>/month</small></div><ul><li>Everything in Starter</li><li>Lead qualification</li><li>Call routing</li></ul></div>
+<div class="price glass"><h3>AI call agent<br>Starter</h3><div class="n"><span data-npr="NPR 25,000" data-usd="$199">NPR 25,000</span> <small>/month</small></div><ul><li>Outbound calls</li><li>Follow-ups</li><li>Call logs to CRM</li></ul></div>
+<div class="price glass"><h3>AI call agent<br>Business</h3><div class="n"><span data-npr="NPR 60,000" data-usd="$499">NPR 60,000</span> <small>/month</small></div><ul><li>Everything in Starter</li><li>Sales and feedback calls</li><li>Appointment scheduling</li></ul></div>
+<div class="price glass"><h3>AI chatbot SaaS</h3><div class="n"><span data-npr="NPR 10,000+" data-usd="$49+">NPR 10,000+</span> <small>/month</small></div><ul><li>Trained on your content</li><li>Website chat widget</li><li>Up to NPR 50,000 / $299 for larger needs</li></ul></div>
+<div class="price glass"><h3>Websites, apps and custom software</h3><div class="n">Custom</div><ul><li>Quoted by scope and value</li><li>Free 30-minute discovery call</li><li>Maintenance plans available</li></ul></div>
+</div></div></section>
+
+<section id="about"><div class="wrap fgrid">
+<div class="portrait" role="img" aria-label="Founder portrait placeholder">RI</div>
+<div>
+<h2>Built by a founder who ships</h2>
+<p class="lead" style="margin-bottom:16px"><b style="color:var(--t)">Rihan Idrishi</b>, Founder and CEO</p>
+<p><b style="color:var(--t)">Vision.</b> To become a globally recognized AI innovation company that helps businesses automate operations and scale efficiently.</p>
+<p><b style="color:var(--t)">Mission.</b> Empower businesses through artificial intelligence, automation and cutting-edge digital solutions.</p>
+<p><b style="color:var(--t)">Where we are going.</b> Nepalgunj to Nepal to the global AI market: first a corporate website, then a client portal, AI chatbot, AI receptionist and AI call agent platforms.</p>
+</div></div></section>
+
+<section id="contact"><div class="wrap cgrid">
+<div>
+<h2>Book your free consultation</h2>
+<p class="lead">Tell us what you want to automate or build. We reply with next steps and a proposal.</p>
+<p><b>Location</b><br><span style="color:var(--t2)">Nepalgunj, Nepal</span></p>
+<p><b>WhatsApp and email</b><br><span style="color:var(--t2)">Add your number and address in the contact details of this page.</span></p>
+</div>
+<form class="glass" id="f" novalidate>
+<label>Full name<input name="name" required autocomplete="name"></label>
+<label>Email<input name="email" type="email" required autocomplete="email"></label>
+<label>Company<input name="company" autocomplete="organization"></label>
+<label>Country<input name="country" autocomplete="country-name"></label>
+<label>Service needed<select name="service"><option>AI agent</option><option>AI automation</option><option>AI receptionist</option><option>AI call agent</option><option>AI chatbot</option><option>Website</option><option>Mobile app</option><option>Custom software</option></select></label>
+<label>Budget range<select name="budget"><option>Under $1,000</option><option>$1,000 – $5,000</option><option>$5,000 – $20,000</option><option>$20,000+</option><option>Not sure yet</option></select></label>
+<label class="full">Message<textarea name="message" rows="4"></textarea></label>
+<button class="btn pri full" type="submit">Request consultation</button>
+<div id="msg" role="status"></div>
+</form></div></section>
+
+<footer><div class="wrap">
+<div class="fcols">
+<div><div class="brand">ZEVLIN<small style="margin-left:6px">CORPORATION</small></div><p>Innovate. Scale. Lead.</p></div>
+<div><h4>Company</h4><a href="#about">About</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
+<div><h4>Services</h4><a href="#services">AI solutions</a><a href="#services">Web and mobile</a><a href="#pricing">Pricing</a></div>
+<div><h4>Resources</h4><a href="#portfolio">Portfolio</a><a href="#contact">Book consultation</a></div>
+</div>
+<div class="bottom"><span>© 2026 Zevlin Corporation. All rights reserved.</span><span>Privacy Policy · Terms</span></div>
+</div></footer>
+
+<a class="wa" href="#contact" aria-label="Contact us">Chat with us</a>
+
+<script>
+document.querySelectorAll('.toggle button').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('.toggle button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+document.querySelectorAll('[data-npr]').forEach(function(s){s.textContent=s.dataset[b.dataset.c]});});});
+document.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('m').classList.remove('open')})});
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var f=e.target,m=document.getElementById('msg');
+if(!f.name.value.trim()||!/^\S+@\S+\.\S+$/.test(f.email.value)){m.style.color='var(--err)';m.textContent='Enter your name and a valid email address so we can reply.';return}
+m.style.color='var(--ok)';m.textContent='Thanks, '+f.name.value.trim()+'. Your request is ready. Connect this form to your backend to receive it.';f.reset()});
+</script>
+</body>
+</html>
